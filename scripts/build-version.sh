@@ -1,6 +1,9 @@
 #!/bin/bash
 
-git diff-index --quiet HEAD -- || (echo "Uncommitted changes found! please commit + push all changes before publishing" && exit 1)
+##########################################
+# Check that all files commited versions #
+##########################################
+git diff-index --quiet HEAD -- || exit "Uncommitted changes found! please commit + push all changes before publishing"
 
 ###################
 # Verify versions #
@@ -10,6 +13,8 @@ json=node_modules/json/lib/json.js
 current_version=$($json "version" < package.json)
 repository_version=$(git show HEAD:package.json | $json version)
 if [[ "$repository_version" != "$current_version" ]]; then
+   echo "Conflict between versions: echo current_version=$current_version, echo repository_version=$repository_version"
+   echo "Please verify what you doing!"
    exit 1
 fi
 

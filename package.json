@@ -25,6 +25,6 @@
   "scripts": {
     "start": "node index.js",
     "test": "export NODE_CONFIG_DIR=etc|| set NODE_CONFIG_DIR=etc&& export NODE_ENV=test|| set NODE_ENV=test&& mocha --reporter=tap ./tests/mainTest.js",
-    "prepare": "bash -c \"./scripts/pre-publish.sh\""
+    "prepare": "bash -c \"./scripts/build-version.sh\""
   }
 }
