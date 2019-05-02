@@ -19,16 +19,12 @@
     "stack-trace": "0.0.10"
   },
   "devDependencies": {
-    "pre-commit": "^1.2.2",
     "mocha": "^3.5.3",
     "json": "^9.0.6"
   },
   "scripts": {
+    "start": "node index.js",
     "test": "export NODE_CONFIG_DIR=etc|| set NODE_CONFIG_DIR=etc&& export NODE_ENV=test|| set NODE_ENV=test&& mocha --reporter=tap ./tests/mainTest.js",
-    "bump_version": "bash -c \"./scripts/bump_version.sh\""
-  },
-  "pre-commit": [
-    "bump_version",
-    "test"
-  ]
+    "prepublish": "bash -c \"./scripts/bump_version.sh\""
+  }
 }
