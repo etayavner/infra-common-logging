@@ -4,7 +4,13 @@ if (!global.rootFolder) {
 if (!global.rootRequire){
     global.rootRequire = function (name) { return require(global.rootFolder + '/' + name); };
 }
+let path = require('path');
+let moduleConfigDir = path.join(__dirname, 'etc');
 const config = require('config');
+let moduleConfigJson = config.util.loadFileConfigs(moduleConfigDir);
+if (moduleConfigJson.log){
+    config.util.setModuleDefaults('log', moduleConfigJson.log);
+}
 const log4js = require('./lib/ovp-log4js');
 const transactionLogger = require('./lib/transactionLogger');
 const log = log4js.getLogger();
