@@ -31,5 +31,3 @@ git commit package.json -m "Updating package version to $new_version"
 # Push changes  #
 ###################
 git push origin master
-
-exit 1
