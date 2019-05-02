@@ -23,9 +23,9 @@ fi
 ##################
 # Update version #
 ##################
-new_version=$(echo $current_version | perl -ne '@p=split(/\./); $p[-1]++; print join(".",@p)')
-echo new_version=$new_version
-$json -I -f package.json -e this.version=\"$new_version\"
+new_version=$(echo ${current_version} | perl -ne '@p=split(/\./); $p[-1]++; print join(".",@p)')
+echo new_version=${new_version}
+$json -I -f package.json -e this.version=\"${new_version}\"
 
 
 ###################
@@ -36,6 +36,7 @@ $json -I -f package.json -e this.version=\"$new_version\"
 test -z "$(npm info ${packageName}@${new_version})"
 if [[ ! $? -eq 0 ]]
 then
+    $json -I -f package.json -e this.version=\"${current_version}\"
     exit "$packageName@$new_version is already published in npm registry"
 fi
 
