@@ -1,7 +1,6 @@
 #!/bin/bash
 
-git diff-index --quiet HEAD -- || echo "Uncommitted changes found! please commit + push all changes before publishing"
-git diff-index --quiet HEAD -- || exit 1
+git diff-index --quiet HEAD -- || (echo "Uncommitted changes found! please commit + push all changes before publishing" && exit 1)
 
 ###################
 # Verify versions #
