@@ -25,7 +25,6 @@
   "scripts": {
     "start": "node index.js",
     "test": "export NODE_CONFIG_DIR=etc|| set NODE_CONFIG_DIR=etc&& export NODE_ENV=test|| set NODE_ENV=test&& mocha --reporter=tap ./tests/mainTest.js",
-    "prepublish": "npm run bump_version",
-    "bump_version": "bash -c \"./scripts/bump_version.sh\""
+    "prepublish": "bash -c \"./scripts/pre-publish.sh\""
   }
 }
