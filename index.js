@@ -1,5 +1,9 @@
-global.rootRequire = function (name) { return require(__dirname + '/' + name); };
-global.rootFolder = global.rootFolder || __dirname;
+if (!global.rootFolder) {
+    global.rootFolder = __dirname;
+}
+if (!global.rootRequire){
+    global.rootRequire = function (name) { return require(global.rootFolder + '/' + name); };
+}
 const config = require('config');
 const log4js = require('./lib/ovp-log4js');
 const transactionLogger = require('./lib/transactionLogger');
@@ -107,7 +111,7 @@ module.exports = {
 };
 
 if (config.log.setGlobalvar){
-    global[config.log.setGlobal] = module.exports;
+    global[config.log.setGlobalvar] = module.exports;
 }
 
 module.exports.trace("ovp-log4js initiated with success!");
