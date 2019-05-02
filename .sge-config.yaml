@@ -1,0 +1,29 @@
+config_version: 4
+first_comment: |
+    This is automatically generated comment that should help you pass code review and delivery. Please review the checklist below
+    - [ ] Did you install and run pre-commit
+    - [ ] Did you squash all related commits to a single one ?
+    - [ ] Did you rebase on to origin/master, rather than merge?
+
+wrapper_procedure:
+    project: VGW_COMP_CI
+    procedure: github_generic_wrapper_v2 
+
+test_procedures:
+    pytest_component:
+        project: VGW_COMP_CI
+        procedure: microservice_run_tests
+        target:
+            - master
+
+release_procedures:
+    release:
+        project: VGW_Mallard
+        procedure: Run_node_artifactory_release
+        target:
+            - master
+
+reviews:
+    code_review:
+        users:
+            - iavner

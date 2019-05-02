@@ -1,0 +1,33 @@
+{
+  "level": "TRACE",
+  "requestApi": {
+    "init": "DEBUG",
+    "requestBody": "TRACE",
+    "finish": "INFO",
+    "responseBody": "TRACE"
+  },
+  "httpCalls": {
+    "start": "DEBUG",
+    "requestBody": "TRACE",
+    "end": "INFO",
+    "responseBody": "TRACE"
+  },
+  "cronJobs": {
+    "start": "INFO",
+    "end": "INFO"
+  },
+  "healthApi": {
+    "init": "DEBUG",
+    "requestBody": "TRACE",
+    "finish": "DEBUG"
+  },
+  "manageApi": {
+    "init": "DEBUG",
+    "requestBody": "DEBUG",
+    "finish": "INFO"
+  },
+  "mongo": {
+    "start": "INFO",
+    "end": "INFO"
+  }
+}
