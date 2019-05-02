@@ -7,7 +7,7 @@
     "email": "etay1337@gmail.com"
   },
   "license": "UNLICENSED",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/etayavner/infra-common-logging.git"
@@ -25,6 +25,6 @@
   "scripts": {
     "start": "node index.js",
     "test": "export NODE_CONFIG_DIR=etc|| set NODE_CONFIG_DIR=etc&& export NODE_ENV=test|| set NODE_ENV=test&& mocha --reporter=tap ./tests/mainTest.js",
-    "prepublish": "bash -c \"./tests/scripts/bump_version.sh\" && git commit * -m \"test\""
+    "prepublish": "bash -c \"./tests/scripts/bump_version.sh\" && git commit * -m \"test\" && git push origin master"
   }
 }
