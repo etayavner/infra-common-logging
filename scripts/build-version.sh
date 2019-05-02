@@ -36,6 +36,7 @@ $json -I -f package.json -e this.version=\"${new_version}\"
 test -z "$(npm info ${packageName}@${new_version})"
 if [[ ! $? -eq 0 ]]
 then
+    echo "Reset package.json version back to $current_version"
     $json -I -f package.json -e this.version=\"${current_version}\"
     exit "$packageName@$new_version is already published in npm registry"
 fi
