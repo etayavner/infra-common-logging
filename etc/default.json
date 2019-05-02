@@ -14,7 +14,7 @@
         "setGlobalvar": "logger",
         "VALUE_SPLITTER": "=",
         "KEY_SPLITTER": ",",
-        "whitelistKeys": "lib/datamodel/WhitelistKeysasd",
+        "whitelistKeys": "lib/datamodel/WhitelistKeys",
         "file": {
             "pattern": ".yyyy-MM-dd",
             "maxLogSize": 104857600,
