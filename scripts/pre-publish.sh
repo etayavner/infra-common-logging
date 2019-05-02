@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git diff-index --quiet HEAD -- || echo "Uncommitted changes found! please commit + push all changes before publishing"; exit 1
+
 ###################
 # Verify versions #
 ###################
@@ -29,3 +31,5 @@ git commit package.json -m "Updating package version to $new_version"
 # Push changes  #
 ###################
 git push origin master
+
+exit 1
