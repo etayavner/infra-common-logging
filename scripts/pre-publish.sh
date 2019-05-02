@@ -10,8 +10,8 @@ json=node_modules/json/lib/json.js
 current_version=$($json "version" < package.json)
 repository_version=$(git show HEAD:package.json | $json version)
 if [[ "$repository_version" != "$current_version" ]]; then
-   echo "Conflict between versions: echo current_version=$current_version, echo repository_version=$repository_version"
-   echo "Please verify what you doing!"
+   echo Conflict between versions: current_version=$current_version, repository_version=$repository_version
+   echo Please verify what you doing!
    exit 1
 fi
 
